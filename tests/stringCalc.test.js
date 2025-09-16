@@ -19,3 +19,7 @@ test("return sum of number for new line delimiter", ()=> {
 test("return sum of number for a custom delimiter", ()=> {
   expect(addStringAsNumbers("//;\n1;2")).toBe(3);
 })
+
+test("return error statement of negative numbers", ()=> {
+  expect(addStringAsNumbers("-1,3,-2")).toBe("negative numbers not allowed -1, -2");
+})
