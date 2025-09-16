@@ -1,9 +1,13 @@
+const { generateDelimitersRegexForSplit } = require("./helpers/generateSplitRegex");
+
 function addStringAsNumbers(numbers) {
   if (numbers === "") {
     return 0;
   }
 
-  let numberArray = numbers.split(/[\n,;]/);
+  let delimiterRegex = generateDelimitersRegexForSplit();
+  
+  let numberArray = numbers.split(delimiterRegex);
 
   let isNegativeNumbers = false;
   let negativeNumberArray = [];
