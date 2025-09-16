@@ -21,5 +21,5 @@ test("return sum of number for a custom delimiter", ()=> {
 })
 
 test("return error statement of negative numbers", ()=> {
-  expect(addStringAsNumbers("-1,3,-2")).toBe("negative numbers not allowed -1, -2");
+  expect(addStringAsNumbers("-1,3,-2")).toBe("negative numbers not allowed -1,-2");
 })

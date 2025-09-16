@@ -5,6 +5,9 @@ function addStringAsNumbers(numbers) {
 
   let numberArray = numbers.split(/[\n,;]/);
 
+  let isNegativeNumbers = false;
+  let negativeNumberArray = [];
+
   if (numberArray.length === 1) {
     return Number(numberArray[0]);
   }
@@ -12,14 +15,21 @@ function addStringAsNumbers(numbers) {
   let sumOfNumbers = 0;
 
   for (let number of numberArray) {
-    if (isNaN(number)) {
+    if (number < 0) {
+      isNegativeNumbers = true;
+      negativeNumberArray.push(number);
+    } else if (isNaN(number)) {
       continue;
     } else {
       sumOfNumbers += Number(number);
     }
   }
 
-  return sumOfNumbers;
+  if (isNegativeNumbers) {
+    return `negative numbers not allowed ${negativeNumberArray.join(",")}`;
+  } else {
+    return sumOfNumbers;
+  }
 }
 
 module.exports = {
