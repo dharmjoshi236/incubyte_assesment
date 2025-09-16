@@ -3,7 +3,7 @@ function addStringAsNumbers(numbers) {
         return 0;
     }
 
-    let numberArray = numbers.split(",");
+    let numberArray = numbers.split(/[\n,]/);
 
     if(numberArray.length === 1) {
         return Number(numberArray[0])
@@ -14,11 +14,10 @@ function addStringAsNumbers(numbers) {
     for (let number of numberArray) {
         sumOfNumbers += Number(number)
     }
-
     return sumOfNumbers;
 }
 
-addStringAsNumbers("1,3,5")
+addStringAsNumbers("1\n2,3")
 module.exports = {
     addStringAsNumbers
 }
