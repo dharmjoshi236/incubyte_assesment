@@ -5,5 +5,5 @@ test("return 0 for empty string", () => {
 });
 
 test("return same number for single number passed", ()=> {
-  expect(addStringAsNumbers("1").toBe(1))
+  expect(addStringAsNumbers("1")).toBe(1);
 })
