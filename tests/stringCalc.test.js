@@ -15,3 +15,7 @@ test("return sum of number for multiple numbers in string", ()=> {
 test("return sum of number for new line delimiter", ()=> {
   expect(addStringAsNumbers("1\n2,3")).toBe(6);
 })
+
+test("return sum of number for a custom delimiter", ()=> {
+  expect(addStringAsNumbers("//;\n1;2")).toBe(3);
+})
