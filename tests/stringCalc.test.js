@@ -11,3 +11,7 @@ test("return same number for single number passed", ()=> {
 test("return sum of number for multiple numbers in string", ()=> {
   expect(addStringAsNumbers("1,3,5")).toBe(9);
 })
+
+test("return sum of number for new line delimiter", ()=> {
+  expect(addStringAsNumbers("1\n2,3")).toBe(6);
+})
